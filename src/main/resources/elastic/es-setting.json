@@ -1,0 +1,56 @@
+{
+  "analysis": {
+    "tokenizer": {
+      "kor_nori_tokenizer": {
+        "type": "nori_tokenizer",
+        "decompound_mode": "mixed",
+        "user_dictionary_rules": [
+        ]
+      },
+      "kor_nori_game_tokenizer": {
+        "type": "nori_tokenizer",
+        "decompound_mode": "mixed",
+        "user_dictionary_rules": [
+          "오버워치",
+          "옵치",
+          "로스트아크",
+          "배틀넷",
+          "베틀넷",
+          "배틀냇",
+          "콜오브듀티"
+        ]
+      }
+    },
+    "filter": {
+      "kor_synonyms": {
+        "type": "synonym",
+        "synonyms": [
+        ]
+      },
+      "kor_game_synonyms": {
+        "type": "synonym",
+        "synonyms": [
+          "오버 워치,옵치=>오버워치",
+          "로아,로스트 아크=>로스트아크",
+          "콜옵,콜 오브 듀티,콜 오브듀티,콜오브 듀티=>콜 오브 듀티",
+          "베틀넷,배틀냇=>배틀넷"
+        ]
+      }
+    },
+    "analyzer": {
+      "kor_nori_analyzer": {
+        "type": "custom",
+        "tokenizer": "kor_nori_tokenizer",
+        "filter": [
+        ]
+      },
+      "kor_nori_game_analyzer": {
+        "type": "custom",
+        "tokenizer": "kor_nori_game_tokenizer",
+        "filter": [
+          "kor_game_synonyms"
+        ]
+      }
+    }
+  }
+}
